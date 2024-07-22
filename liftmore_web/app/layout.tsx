@@ -1,32 +1,37 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+"use client";
+
+import {Inter} from "next/font/google";
 import "./lib/globals.css";
 
 import Header from "@/components/header";
+import React from "react";
+import {useMediaQuery} from "@/hooks/use-media-query";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "LiftMore",
-  description: "Strength Training Focused Workout Tracker",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  let dynamicLayout: string = "sm:px-1 md:px-1 lg:px-4";
+  if (!isDesktop) {
+    dynamicLayout += " m-4";
+  }
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <body className="text-gray-900">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <body className="{inter.className} bg-slate-100">
+        <div className="text-gray-900">
+          <div className={dynamicLayout}>
             <Header />
-            <main className="max-w-3xl mx-auto py-8">
+            <main className="sm:py-2 md:py-2 lg:py-4">
               {children}
             </main>
           </div>
-        </body>
+        </div>
       </body>
     </html>
   );
