@@ -49,7 +49,7 @@ export default function Home() {
             <div className="rounded-md py-4 bg-[url('/hero.jpg')] bg-cover bg-bottom h-[60vh] flex flex-col justify-end items-center">
                 <h1 className="text-4xl libre-franklin-h1 tracking-wider text-center text-white shadow-black drop-shadow-lg">FORGE RESULTS THROUGH DYNAMIC
                     ROUTINES</h1>
-                <h3 className="text-md libre-franklin-h4 tracking-wider text-center text-slate-200 pt-2">Create workouts easily
+                <h3 className="text-lg libre-franklin-h4 tracking-wider text-center text-slate-200 pt-2 px-2">Create workouts easily
                     and LiftMore weight.</h3>
             </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 py-4">
