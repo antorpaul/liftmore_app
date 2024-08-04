@@ -3,6 +3,7 @@ import {ExerciseListView} from "@/components/ui/exercise_listview";
 
 
 export default function ExerciesMain() {
+
     return (
         <main>
             <div className="p-4">
